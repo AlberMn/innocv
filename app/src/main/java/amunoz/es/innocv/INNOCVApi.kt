@@ -12,12 +12,12 @@ interface INNOCVApi {
     fun getUserById(@Path("id") id: Int): Call<User>
 
     @DELETE("/api/User/{id}")
-    fun deleteUser(@Path("id") id: Int) : Call<String>
+    fun deleteUser(@Path("id") id: Int) : Call<Void>
 
 
     @POST("/api/User")
-    fun insertUSer(@Body user: User): Call<String>
+    fun insertUser(@Body user: NewUser): Call<Void>
 
     @PUT("/api/User")
-    fun updateUser(@Body user: User): Call <String>
+    fun updateUser(@Body user: User): Call <Void>
 }
