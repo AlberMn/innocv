@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">innocv</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_actvivity_edit">Edit</string>
+    <string name="title_activity_add">Add</string>
+    <string name="tv_name_text">Name</string>
+    <string name="tv_date_text">Date</string>
+    <string name="title_activity_create_edit">CreateEditActivity</string>
+    <string name="edit_text_name_default">Type a name</string>
+    <string name="edit_text_date_default">Touch to insert a date </string>
+</resources>
