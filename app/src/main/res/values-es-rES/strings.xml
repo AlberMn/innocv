@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">innocv</string>
+    <string name="title_activity_main">Lista</string>
+    <string name="title_actvivity_edit">Editar usuario</string>
+    <string name="title_activity_add">Añadir usuario</string>
+    <string name="tv_name_text">Nombre</string>
+    <string name="tv_date_text">Fecha</string>
+    <string name="edit_text_name_default">Escribe un nombre</string>
+    <string name="edit_text_date_default">Toca para añadir fecha</string>
+    <string name="alert_dialog_title">¡Ups!</string>
+    <string name="alert_dialog_text">Ha ocurrido un error. Por favor, inténtelo de nuevo más tarde</string>
+</resources>

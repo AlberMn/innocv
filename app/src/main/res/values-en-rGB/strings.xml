@@ -1,13 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">innocv</string>
-    <string name="title_activity_main">List</string>
-    <string name="title_actvivity_edit">Edit</string>
-    <string name="title_activity_add">Add</string>
+    <string name="title_activity_main">List users</string>
+    <string name="title_actvivity_edit">Edit user</string>
+    <string name="title_activity_add">Add user</string>
     <string name="tv_name_text">Name</string>
     <string name="tv_date_text">Date</string>
-    <string name="title_activity_create_edit">CreateEditActivity</string>
     <string name="edit_text_name_default">Type a name</string>
-    <string name="edit_text_date_default">Touch to insert a date </string>
+    <string name="edit_text_date_default">Touch to insert a date</string>
     <string name="alert_dialog_title">Oops!</string>
     <string name="alert_dialog_text">There was an error. Please, try again later</string>
 </resources>
