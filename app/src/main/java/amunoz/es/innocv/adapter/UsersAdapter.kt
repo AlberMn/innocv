@@ -2,18 +2,14 @@ package amunoz.es.innocv.adapter
 
 
 import amunoz.es.innocv.R
-import amunoz.es.innocv.User
-import amunoz.es.innocv.inflate
+import amunoz.es.innocv.model.User
+import amunoz.es.innocv.extensions.inflate
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
-import kotlinx.android.synthetic.main.market_item.view.*
-
-
-
-
+import kotlinx.android.synthetic.main.user_item.view.*
 
 class UsersAdapter (var usersList: ArrayList<User>, private val listener: (User) -> Unit)
     : RecyclerView.Adapter<UsersAdapter.ViewHolder>() , Filterable{
@@ -21,7 +17,7 @@ class UsersAdapter (var usersList: ArrayList<User>, private val listener: (User)
     var userFullList = ArrayList(usersList)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(parent.inflate(R.layout.market_item))
+        return ViewHolder(parent.inflate(R.layout.user_item))
     }
 
     override fun getItemCount(): Int {
@@ -43,11 +39,11 @@ class UsersAdapter (var usersList: ArrayList<User>, private val listener: (User)
         }
 
     }
-    //TODO comprobar
+
     fun addUsers(users: ArrayList<User>?) {
         if (users != null) {
-            this.usersList = users as ArrayList<User>
-            this.userFullList = users as ArrayList<User>
+            this.usersList = users
+            this.userFullList = users
             notifyDataSetChanged()
         }
     }
@@ -66,7 +62,6 @@ class UsersAdapter (var usersList: ArrayList<User>, private val listener: (User)
             } else {
                 val filterPattern = constraint.toString().toLowerCase().trim { it <= ' ' }
 
-                //filteredList = userFullList.filter { it.name.contains(filterPattern) }
 
                 for (item in userFullList) {
                     if (item.name.toLowerCase().contains(filterPattern)) {

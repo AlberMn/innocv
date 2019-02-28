@@ -1,5 +1,6 @@
-package amunoz.es.innocv
+package amunoz.es.innocv.adapter
 
+import amunoz.es.innocv.R
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color

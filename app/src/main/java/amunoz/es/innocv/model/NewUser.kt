@@ -1,4 +1,4 @@
-package amunoz.es.innocv
+package amunoz.es.innocv.model
 
 import android.support.annotation.Nullable
 
