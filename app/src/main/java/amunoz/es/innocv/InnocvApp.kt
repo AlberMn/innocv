@@ -36,9 +36,4 @@ class InnocvApp : Application (){
         createEditComponent = appComponent.plus(CreateEditModule())
         return createEditComponent
     }
-
-    fun releaseListingComponent() {
-
-    }
-
 }

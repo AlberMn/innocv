@@ -1,15 +1,28 @@
 package amunoz.es.innocv.presenter
 
-import amunoz.es.innocv.NewUser
-import amunoz.es.innocv.User
+import amunoz.es.innocv.model.NewUser
+import amunoz.es.innocv.model.User
 import amunoz.es.innocv.interactor.CreateEditInteractor
 import amunoz.es.innocv.view.CreateEditActivity
 import amunoz.es.innocv.view.CreateEditView
 
 
 class CreateEditPresenterImpl(val interactor: CreateEditInteractor, private var view: CreateEditView? ) : CreateEditPresenter, CreateEditListener {
-    override fun fabClicked(user: User, action: String, createEditView: CreateEditView) {
+
+    override fun viewLoaded(createEditView: CreateEditView) {
         view = createEditView
+        view?.hideProgress()
+    }
+    override fun getUserById(id: Int) = interactor.let {
+        view?.showProgress()
+        it.getUserById(id, this)
+    }
+
+
+
+    override fun fabClicked(user: User, action: String) {
+
+        view?.showProgress()
         if(action == CreateEditActivity.ACTION_EDIT) {
 
           updatUser(user)
@@ -27,26 +40,20 @@ class CreateEditPresenterImpl(val interactor: CreateEditInteractor, private var 
         it.insertUser(newUser,this)
     }
 
-    override fun createeUser(user: User) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun onSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view?.hideProgress()
+        view?.navigateToMainActivity()
+
     }
 
     override fun onError(descError: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        view?.hideProgress()
+        view?.showAlertDialog(descError)
     }
 
-    override fun setView(createEditView: CreateEditView) {
-
+    override fun onGetUserByIdSuccess(user: User) {
+        view?.hideProgress()
+        view?.showUserDetails(user)
     }
-
-    override fun updateUser(user: User) {}
-
-
-
-
-
 }

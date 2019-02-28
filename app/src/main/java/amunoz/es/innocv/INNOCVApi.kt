@@ -1,5 +1,7 @@
 package amunoz.es.innocv
 
+import amunoz.es.innocv.model.NewUser
+import amunoz.es.innocv.model.User
 import retrofit2.Call
 import retrofit2.http.*
 
